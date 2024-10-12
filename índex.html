@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Tập Trực Tuyến</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+        }
+        #menu {
+            width: 200px;
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+        #menu a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+        #menu a:hover {
+            background-color: #e0e0e0;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+        #share-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <h3>Danh Sách Bài Học</h3>
+        <a href="#" onclick="showLesson('lesson1')">Bài Học 1</a>
+        <a href="#" onclick="showLesson('lesson2')">Bài Học 2</a>
+        <a href="#" onclick="showLesson('lesson3')">Bài Học 3</a>
+        <!-- Thêm nhiều bài học nếu cần -->
+    </div>
+
+    <div id="content">
+        <h2>Chi Tiết Bài Giảng</h2>
+        <div id="lesson-content">
+            <p>Hãy chọn một bài học ở bên trái để xem chi tiết.</p>
+        </div>
+        <button id="share-button" onclick="shareLesson()">Chia Sẻ Bài Giảng</button>
+    </div>
+
+    <script>
+        function showLesson(lesson) {
+            const lessonContent = document.getElementById('lesson-content');
+            switch (lesson) {
+                case 'lesson1':
+                    lessonContent.innerHTML = `
+                        <h3>Bài Học 1</h3>
+                      <p>Sách tham khảo: <a href="#">Link tài liệu tham khảo</a></p>
+        <p>Sách bài tập: <a href="#">Link sách bài tập</a></p>
+        <p>Sách nâng cao: <a href="#">Link sách nâng cao</a></p>
+                    `;
+                    break;
+                case 'lesson2':
+                    lessonContent.innerHTML = `
+                        <h3>Bài Học 2</h3>
+                         <p>Sách tham khảo: <a href="#">Link tài liệu tham khảo</a></p>
+        <p>Sách bài tập: <a href="#">Link sách bài tập</a></p>
+        <p>Sách nâng cao: <a href="#">Link sách nâng cao</a></p>
+                    `;
+                    break;
+                case 'lesson3':
+                    lessonContent.innerHTML = `
+                        <h3>Bài Học 3</h3>
+                       <p>Sách tham khảo: <a href="#">Link tài liệu tham khảo</a></p>
+        <p>Sách bài tập: <a href="#">Link sách bài tập</a></p>
+        <p>Sách nâng cao: <a href="#">Link sách nâng cao</a></p>
+                    `;
+                    break;
+                default:
+                    lessonContent.innerHTML = `
+                        <h3>Bài Học</h3>
+                        <p>Hãy chọn một bài học ở bên trái để xem chi tiết.</p>
+                    `;
+            }
+        }
+
+        function shareLesson() {
+            alert('Chia sẻ bài giảng thành công!');
+            // Thêm logic chia sẻ nếu cần
+        }
+    </script>
+
+</body>
+</html>
